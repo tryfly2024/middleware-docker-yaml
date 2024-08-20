@@ -19,8 +19,8 @@ services:
       RABBITMQ_DEFAULT_PASS: root.123456.
 
     networks:
-      - hobby-net
+      - share-hobby-net
 
 networks:
-  hobby-net:
-    driver: bridge
+  share-hobby-net:
+    external: true

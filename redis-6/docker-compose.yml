@@ -19,8 +19,8 @@ services:
       "/usr/local/etc/redis/redis.conf"
     ]
     networks:
-      - hobby-net
+      - share-hobby-net
 
 networks:
-  hobby-net:
-    driver: bridge
+  share-hobby-net:
+    external: true

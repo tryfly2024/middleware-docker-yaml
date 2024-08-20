@@ -19,9 +19,9 @@ services:
       '--max_connections=3000'
     ]
     networks:
-      - hobby-net
+      - share-hobby-net
 
 networks:
-  hobby-net:
-    driver: bridge
+  share-hobby-net:
+    external: true
 
