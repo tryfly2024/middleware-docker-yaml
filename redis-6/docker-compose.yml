@@ -1,0 +1,26 @@
+version: '3'
+services:
+  redis-6:
+    container_name: redis-6
+    image: redis:6.2.4
+    restart: always
+    ports:
+      - 6379:6379
+      - 16379:16379
+    #    privileged: true
+    volumes:
+      - /data/docker-data/redis-6/log:/var/log/redis
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+      - /data/docker-data/redis-6/data:/data
+    environment:
+      REDIS_PASSWORD: "root.123456."
+    command: [
+      "redis-server",
+      "/usr/local/etc/redis/redis.conf"
+    ]
+    networks:
+      - hobby-net
+
+networks:
+  hobby-net:
+    driver: bridge
