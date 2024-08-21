@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nacos-standalone:
+    container_name: nacos-standalone
+    image: nacos/nacos-server:v2.4.1
+    restart: always
+    ports:
+      - 8848:8848
+      - 9848:9848
+#    privileged: true
+    volumes:
+      - /data/docker-data/nacos-standalone/log:/home/nacos/logs
+    env_file:
+      - ./env/standlone.env
+    networks:
+      - share-hobby-net
+
+networks:
+  share-hobby-net:
+    external: true
+
