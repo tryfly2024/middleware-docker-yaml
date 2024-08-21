@@ -11,7 +11,7 @@ services:
     volumes:
       - /data/docker-data/nacos-standalone/log:/home/nacos/logs
     env_file:
-      - ./env/standlone.env
+      - ./env/standalone.env
     networks:
       - share-hobby-net
 
