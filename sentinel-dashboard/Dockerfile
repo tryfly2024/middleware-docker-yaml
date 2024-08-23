@@ -10,9 +10,4 @@ COPY sentinel-dashboard-1.8.2.jar /app/sentinel-dashboard.jar
 EXPOSE 8080
 
 # 运行 JAR 文件
-CMD ["java",
-     "-Dsentinel.dashboard.auth.username=root",
-     "-Dsentinel.dashboard.auth.password=root.123456.",
-     "-Dproject.name=sentinel-dashboard",
-     "-jar",
-     "sentinel-dashboard.jar"]
+CMD ["java", "-Dsentinel.dashboard.auth.username=root", "-Dsentinel.dashboard.auth.password=root.123456.", "-Dproject.name=sentinel-dashboard", "-jar", "sentinel-dashboard.jar"]
