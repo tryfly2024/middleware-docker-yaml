@@ -11,4 +11,4 @@ COPY sentinel.properties /app/sentinel.properties
 EXPOSE 8080
 
 # 运行 JAR 文件
-CMD ["java", "-jar", "sentinel-dashboard.jar"]
+CMD ["java", "-Dcsp.sentinel.config.file=classpath:sentinel.properties", "-jar", "sentinel-dashboard.jar"]

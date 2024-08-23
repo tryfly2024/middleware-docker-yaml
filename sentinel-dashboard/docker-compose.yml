@@ -7,7 +7,7 @@ services:
     mem_limit: 256M      # 限制使用 256M 内存
     restart: always
     ports:
-      - 10901:8080
+      - 10901:9090
     #    privileged: true
     networks:
       share-hobby-net:
