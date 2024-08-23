@@ -8,6 +8,7 @@ services:
     restart: always
     ports:
       - 10901:8080
+      - 18719:8719
     #    privileged: true
     networks:
       share-hobby-net:
