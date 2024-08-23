@@ -2,13 +2,17 @@ version: '3'
 services:
   zipkin-server:
     container_name: zipkin-server
-    image: zipkin-server:2.23.9
+    image: openzipkin/zipkin:2.23.9
     cpus: '0.5'       # 限制使用 0.5 核 CPU
     mem_limit: 512M      # 限制使用 256M 内存
     restart: always
     ports:
       - 9411:9411
     #    privileged: true
+    environment:
+      RABBIT_ADDRESSES: '192.168.16.2:5672'
+      RABBIT_USER: root
+      RABBIT_PASSWORD: 'root.123456.'
     networks:
       share-hobby-net:
         ipv4_address: "192.168.16.7"
