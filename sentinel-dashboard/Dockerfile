@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 将 JAR 文件复制到工作目录
 COPY sentinel-dashboard-1.8.2.jar /app/sentinel-dashboard.jar
-COPY application.properties /app/application.properties
+COPY sentinel.properties /app/sentinel.properties
 # 开放端口 10901
 EXPOSE 8080
 
