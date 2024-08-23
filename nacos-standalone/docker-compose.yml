@@ -3,6 +3,8 @@ services:
   nacos-standalone:
     container_name: nacos-standalone
     image: nacos/nacos-server:v2.4.1
+    cpus: '1.0'       # 限制使用 1 核 CPU
+    mem_limit: 1G      # 限制使用 1GB 内存
     restart: always
     ports:
       - 8848:8848
