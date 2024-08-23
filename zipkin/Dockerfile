@@ -10,4 +10,4 @@ COPY zipkin-server-2.23.9-exec.jar /app/zipkin-server.jar
 EXPOSE 9411
 
 # 运行 JAR 文件
-CMD ["java", "--zipkin.collector.rabbitmq.uri=amqp://root:root.123456.@host:5672/", "-jar", "zipkin-server.jar"]
+CMD ["java", "--zipkin.collector.rabbitmq.uri=amqp://root:root.123456.@192.168.16.2:5672/", "-jar", "zipkin-server.jar"]
