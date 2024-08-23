@@ -15,7 +15,8 @@ services:
     env_file:
       - ./env/standalone.env
     networks:
-      - share-hobby-net
+      share-hobby-net:
+        ipv4_address: "192.168.16.5"
 
 networks:
   share-hobby-net:

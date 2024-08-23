@@ -21,7 +21,8 @@ services:
       '--max_connections=3000'
     ]
     networks:
-      - share-hobby-net
+      share-hobby-net:
+        ipv4_address: "192.168.16.4"
 
 networks:
   share-hobby-net:
