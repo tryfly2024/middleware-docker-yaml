@@ -1,0 +1,18 @@
+version: '3'
+services:
+  sentinel-dashboard:
+    container_name: sentinel-dashboard
+    image: sentinel-dashboard:1.8.2
+    cpus: '0.5'       # 限制使用 0.5 核 CPU
+    mem_limit: 256M      # 限制使用 256M 内存
+    restart: always
+    ports:
+      - 10901:8080
+    #    privileged: true
+    networks:
+      share-hobby-net:
+        ipv4_address: "192.168.16.6"
+
+networks:
+  share-hobby-net:
+    external: true
