@@ -3,6 +3,8 @@ services:
   rabbitmq-3:
     container_name: rabbitmq-3
     image: rabbitmq:3.13.6-management
+    cpus: '0.5'       # 限制使用 0.5 核 CPU
+    mem_limit: 512M      # 限制使用 512M 内存
     restart: always
     hostname: rabbitmq-3
     ports:
