@@ -1,0 +1,21 @@
+version: '3'
+services:
+  elk:
+    container_name: elk
+    image: sebp/elk:7.16.1
+    cpus: '2.0'       # 限制使用 0.5 核 CPU
+    mem_limit: 4G      # 限制使用 512M 内存
+    restart: always
+    ports:
+      - 5601:5601
+      - 9200:9200
+      - 5044:5044
+#    privileged: true
+    networks:
+      share-hobby-net:
+        ipv4_address: "192.168.16.8"
+
+networks:
+  share-hobby-net:
+    external: true
+
