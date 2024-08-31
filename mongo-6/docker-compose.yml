@@ -9,9 +9,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root.123456.
-      MONGO_INITDB_DATABASE: test
+      MONGO_INITDB_DATABASE: test_db
       MONGO_USERNAME: test
       MONGO_PASSWORD: test.123456
     volumes:
       - /data/docker-data/mongo-6/data:/data/db
-      - $PWD/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+#      - $PWD/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+      - $PWD/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
